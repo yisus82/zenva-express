@@ -2,19 +2,27 @@ const express = require('express');
 
 const router = express.Router();
 
+const profiles = [
+  { name: 'Steven', city: 'Sydney', profession: 'doctor' },
+  { name: 'Mark', city: 'Perth', profession: 'lawyer' },
+  { name: 'Michelle', city: 'Sydney', profession: 'programmer' }
+]
+
 router.get('/', (req, res, next) => {
   const data = {
     name: 'Index',
     date: new Date().toLocaleString(),
-    profiles: [
-      { name: 'Steven', city: 'Sydney', profession: 'doctor' },
-      { name: 'Mark', city: 'Perth' },
-      { name: 'Michelle', city: 'Sydney', profession: 'programmer' },
-    ],
+    profiles,
   };
 
   res.render('index', data);
 });
+
+router.post('/join', (req, res, next) => {
+  const { body } = req;
+  profiles.push(body);
+  res.redirect('/');
+})
 
 router.get('/json', (req, res, next) => {
   const data = { name: 'David', location: 'Sydney' };

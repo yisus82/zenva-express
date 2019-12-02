@@ -23,6 +23,28 @@
 			</li>
 			{{/profiles}}
 		</ol>
+		<form method="post" action="/join">
+			<fieldset>
+				<legend>Join us</legend>
+				<div class="form-row align-items-center">
+					<div class="col-auto">
+						<label class="sr-only" for="name">Name</label>
+						<input id="name" class="form-control mb-2" type="text" name="name" placeholder="Name" required />
+					</div>
+					<div class="col-auto">
+						<label class="sr-only" for="city">City</label>
+						<input id="city" class="form-control mb-2" type="text" name="city" placeholder="City" required />
+					</div>
+					<div class="col-auto">
+						<label class="sr-only" for="profession">Profession</label>
+						<input id="profession" class="form-control mb-2" type="text" name="profession" placeholder="Profession" />
+					</div>
+					<div class="col-auto">
+						<button class="btn btn-primary mb-2" type="submit">Add Profile</button>
+					</div>
+				</div>
+			</fieldset>
+		</form>
 	</div>
 </body>
 
