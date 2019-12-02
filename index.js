@@ -16,5 +16,15 @@ app.get('/html', (req, res, next) => {
   res.send(html);
 });
 
+app.get('/query', (req, res, next) => {
+  const { query } = req;
+  res.json(query);
+});
+
+app.get('/params/:name/:location/:occupation', (req, res, next) => {
+  const { params } = req;
+  res.json(params);
+});
+
 app.listen(5000);
 console.log('Server running on http://localhost:5000');
