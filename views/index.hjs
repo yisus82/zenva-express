@@ -16,6 +16,13 @@
 		<h1>This is the {{name}} Template</h1>
 		<p>Now is {{date}}. My name is {{firstName}}.</p>
 		<img width="200px" src="/images/puppy.jpg">
+		<ol>
+			{{#profiles}}
+			<li>
+				{{name}}, {{city}}{{#profession}}, profession: {{profession}}{{/profession}}
+			</li>
+			{{/profiles}}
+		</ol>
 	</div>
 </body>
 

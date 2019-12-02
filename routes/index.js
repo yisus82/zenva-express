@@ -6,6 +6,11 @@ router.get('/', (req, res, next) => {
   const data = {
     name: 'Index',
     date: new Date().toLocaleString(),
+    profiles: [
+      { name: 'Steven', city: 'Sydney', profession: 'doctor' },
+      { name: 'Mark', city: 'Perth' },
+      { name: 'Michelle', city: 'Sydney', profession: 'programmer' },
+    ],
   };
 
   res.render('index', data);
