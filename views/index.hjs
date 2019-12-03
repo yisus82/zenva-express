@@ -14,7 +14,7 @@
 <body>
 	<div class="container">
 		<h1>This is the {{name}} Template</h1>
-		<p>Now is {{date}}. My name is {{firstName}}.</p>
+		<p>Now is {{date}}. My name is {{username}}.</p>
 		<img width="200px" src="/images/puppy.jpg">
 		<ol>
 			{{#profiles}}

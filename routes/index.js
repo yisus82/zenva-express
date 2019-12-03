@@ -13,9 +13,26 @@ router.get('/', (req, res, next) => {
     name: 'Index',
     date: req.headers.timestamp,
     profiles,
+    username: req.query.username,
   };
 
   res.render('index', data);
+});
+
+router.get('/login', (req, res, next) => {
+  res.render('login', null);
+});
+
+router.post('/login', (req, res, next) => {
+  const { username } = req.body;
+  const { password } = req.body;
+
+  if (password === '123') {
+    res.redirect(`/?username=${username}`);
+    return;
+  }
+
+  res.render('login', { error: 'Incorrect username and/or password.' });
 });
 
 router.post('/join', (req, res, next) => {
