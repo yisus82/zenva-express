@@ -5,13 +5,13 @@ const router = express.Router();
 const profiles = [
   { name: 'Steven', city: 'Sydney', profession: 'doctor' },
   { name: 'Mark', city: 'Perth', profession: 'lawyer' },
-  { name: 'Michelle', city: 'Sydney', profession: 'programmer' }
-]
+  { name: 'Michelle', city: 'Sydney', profession: 'programmer' },
+];
 
 router.get('/', (req, res, next) => {
   const data = {
     name: 'Index',
-    date: new Date().toLocaleString(),
+    date: req.headers.timestamp,
     profiles,
   };
 
@@ -22,10 +22,14 @@ router.post('/join', (req, res, next) => {
   const { body } = req;
   profiles.push(body);
   res.redirect('/');
-})
+});
 
 router.get('/json', (req, res, next) => {
-  const data = { name: 'David', location: 'Sydney' };
+  const data = {
+    name: 'David',
+    location: 'Sydney',
+    date: req.headers.timestamp,
+  };
   res.json(data);
 });
 
